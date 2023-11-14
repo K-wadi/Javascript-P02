@@ -7,7 +7,7 @@ const salaryIncreasePercentage = 0.05;  // Salarisverhogingspercentage (5%)
 const salaryIncrease = currentSalary * salaryIncreasePercentage;
 
 // Toon het resultaat op de webpagina
-document.body.innerHTML += `<p>Als je €${currentSalary.toLocaleString()} verdient en je krijgt volgende maand 5% salarisverhoging, dan krijg je een verhoging van €${salaryIncrease.toLocaleString()}.</p>`;
+// document.body.innerHTML += `<p>Als je €${currentSalary.toLocaleString()} verdient en je krijgt volgende maand 5% salarisverhoging, dan krijg je een verhoging van €${salaryIncrease.toLocaleString()}.</p>`;
 
 // Opdracht 2
 // Variabelen
