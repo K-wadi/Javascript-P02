@@ -185,3 +185,30 @@ console.log(article3);
 console.log(article4);
 console.log(article5);
 
+// Opdracht 9
+const container = document.querySelector(".container");
+// let code = createCard();
+// container.innerHTML += code;
+// container.innerHTML += code;
+// container.innerHTML += code;
+// container.innerHTML += code;
+// container.innerHTML += code;
+
+for (let index = 0; index < recipes.length; index++) {
+  const receipt = recipes[index];
+  const cardCode = createCard(receipt);
+  container.innerHTML += cardCode;
+}
+
+function createCard(product) {
+  const card = `
+  <div class="card">
+        <h2>${product.title}</h2>
+        <p>${product.description}</p>
+        <div>
+          <span>${product.healthy}</span>
+        </div>
+      </div>`;
+
+  return card;
+}
