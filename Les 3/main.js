@@ -31,7 +31,7 @@ console.log(`id is: ${objPerson1.id}`);
 console.log(`firstname is: ${objPerson1.firstname}`);
 console.log(`lastname is: ${objPerson1.lastname}`);
 console.log(`----------------------------------`);
- 
+
 // Opdr. 2
 const text = `{
   "id": 1,
@@ -48,14 +48,14 @@ const text = `{
   "userId": 1
 }`;
 
-const objtext = JSON.parse(text);
-console.log(`title is: ${objtext.title}`);
-console.log(`content is: ${objtext.content}`);
-console.log(`publishedAt is: ${objtext.publishedAt}`);
+const objText = JSON.parse(text);
+console.log(`title is: ${objText.title}`);
+console.log(`content is: ${objText.content}`);
+console.log(`publishedAt is: ${objText.publishedAt}`);
 console.log(`----------------------------------`);
 
 // Opdr. 3
-const text1 = `{
+const profile = `{
     "id": 4,
   "firstname": "Emily",
   "lastname": "Davis",
@@ -88,10 +88,119 @@ const text1 = `{
   }
 }`;
 
-const objtext1 = JSON.parse(text1);
-console.log(`email is: ${objtext1.email}`);
-console.log(`username is: ${objtext1.login.username}`);
-console.log(`city is: ${objtext1.address.city}`);
-console.log(`company is: ${objtext1.company.name}`);
+const objProfile = JSON.parse(profile);
+console.log(`email is: ${objProfile.email}`);
+console.log(`username is: ${objProfile.login.username}`);
+console.log(`city is: ${objProfile.address.city}`);
+console.log(`company is: ${objProfile.company.name}`);
 console.log(`----------------------------------`);
 
+// Opdr. 4
+const text2 = `{
+  "id": 11,
+  "postId": 3,
+  "userId": 2,
+  "comment": "Cras convallis ipsum eget sapien hendrerit dignissim."
+ }`;
+
+const objText2 = JSON.parse(text2);
+console.log(`id is: ${objText2.id}`);
+console.log(`postId is: ${objText2.postId}`);
+console.log(`userId is: ${objText2.userId}`);
+console.log(`comment is: ${objText2.comment}`);
+console.log(`----------------------------------`);
+
+// Opdr. 5
+const comment = `
+  [
+    {
+      "id": 1,
+      "postId": 1,
+      "userId": 1,
+      "comment": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+      "id": 2,
+      "postId": 1,
+      "userId": 1,
+      "comment": "Nulla quis libero vel orci rutrum suscipit."
+    },
+    {
+      "id": 3,
+      "postId": 3,
+      "userId": 2,
+      "comment": "Cras ac elit sit amet mi placerat bibendum."
+    }
+  ]
+ `;
+
+const objComment = JSON.parse(comment);
+for (let i = 0; i < objComment.length; i++) {
+  const object = objComment[i];
+  console.log(`comment is: ${object.comment}`);
+}
+console.log(`----------------------------------`);
+
+// Opdr. 6
+const albums = `
+[
+  {
+    "albumId": 1,
+    "id": 1,
+    "title": "accusamus beatae ad facilis cum similique qui sunt",
+    "url": "https://via.placeholder.com/600/92c952",
+    "thumbnailUrl": "https://via.placeholder.com/150/92c952"
+  },
+  {
+    "albumId": 1,
+    "id": 2,
+    "title": "reprehenderit est deserunt velit ipsam",
+    "url": "https://via.placeholder.com/600/771796",
+    "thumbnailUrl": "https://via.placeholder.com/150/771796"
+  },
+  {
+    "albumId": 1,
+    "id": 3,
+    "title": "officia porro iure quia iusto qui ipsa ut modi",
+    "url": "https://via.placeholder.com/600/24f355",
+    "thumbnailUrl": "https://via.placeholder.com/150/24f355"
+  },
+  {
+    "albumId": 1,
+    "id": 4,
+    "title": "culpa odio esse rerum omnis laboriosam voluptate repudiandae",
+    "url": "https://via.placeholder.com/600/d32776",
+    "thumbnailUrl": "https://via.placeholder.com/150/d32776"
+  },
+  {
+    "albumId": 1,
+    "id": 5,
+    "title": "natus nisi omnis corporis facere molestiae rerum in",
+    "url": "https://via.placeholder.com/600/f66b97",
+    "thumbnailUrl": "https://via.placeholder.com/150/f66b97"
+  },
+  {
+    "albumId": 1,
+    "id": 6,
+    "title": "accusamus ea aliquid et amet sequi nemo",
+    "url": "https://via.placeholder.com/600/56a8c2",
+    "thumbnailUrl": "https://via.placeholder.com/150/56a8c2"
+  }
+]
+`;
+const objAlbums = JSON.parse(albums);
+const ulList = document.querySelector("ul");
+for (let i = 0; i < objAlbums.length; i++) {
+  const album = objAlbums[i];
+  ulList.innerHTML += `<li>${album.title}</li>`;
+}
+
+// Opdr. 7
+fetch("https://jsonplaceholder.org/users/1")
+  .then(function (response) {
+    return response.json();
+  })
+  .then((data) => console.log(data));
+
+  // Opdr. 8
+  
