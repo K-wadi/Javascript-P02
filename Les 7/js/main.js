@@ -131,12 +131,7 @@ fetch("https://fakestoreapi.com/products")
   });
 
 function createCard(product) {
-  const {
-    title,
-    description,
-    price,
-    image,
-  } = product;
+  const { title, description, price, image } = product;
 
   const code = `
     <div class="card">
